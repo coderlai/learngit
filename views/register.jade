@@ -1,0 +1,79 @@
+doctype html
+html(lang='zh-cn',ng-app='myApp')
+    head
+        meta(charset='utf-8')
+        meta(http-equiv='X-UA-Compatible', content='IE=edge')
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+        title &#x7528;&#x6237;&#x6CE8;&#x518C; - &#x7A0B;&#x5E8F;&#x733F;&#x95EE;&#x7B54;
+        meta(name='keywords', content='用户注册')
+        meta(name='description', content='用户注册')
+        script(src='./static/components/angular/angular.min.js')
+        link(rel='stylesheet', href='./static/components/bootstrap/dist/css/bootstrap.css')
+        link(rel='stylesheet', href='./static/components/font-awesome/css/font-awesome.css')
+        link(rel='stylesheet', href='./css/account.css')
+        //if lt IE 9
+          script(src='http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js')
+          script(src='http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js')
+    body
+        .container(ng-controller='register')
+            .header.text-center
+                h1
+                    a.logo(href='index.html') &#x7A0B;&#x5E8F;&#x5458;&#x95EE;&#x7B54;
+                p.description.text-muted (&#x7A0B;&#x5E8F;&#x5458;&#x95EE;&#x7B54;() { console.log(&quot;&#x7A0B;&#x5E8F;&#x5458;&#x4E13;&#x7528;&#x95EE;&#x7B54;&#x7F51;&#x7AD9;&#xFF0C;&#x53C8;&#x5FEB;&#x53C8;&#x51C6;&#x627E;&#x5230;&#x95EE;&#x9898;&#x7B54;&#x6848;&quot;); })()
+            .col-md-6.col-md-offset-3.bg-white.login-wrap
+                h1.h4.text-center.text-muted.login-title &#x521B;&#x5EFA;&#x65B0;&#x8D26;&#x53F7;
+                form#registerForm.form-horizontal(role='form', name='myForm',ng-submit='doRegister()', method='post',novalidate='novalidate')
+                    input(type='hidden', name='_token', value='f5Zj2qrN8CA7OzwQTbq0ytgPvmU9GaA7z3cvT15w')
+                    .form-group
+                        label.required.control-label.col-md-2 &#x59D3;&#x540D;
+                        .col-md-7
+                            input.form-control(type='text', name='myName',ng-model='username', value='', ng-required=true, placeholder='姓名',ng-minlength=6,ng-maxlength=20)
+                        p.help-block.col-md-3(ng-show='myForm.myName.$invalid') 6~20位之间
+                    .form-group
+                        label.required.control-label.col-md-2 Email
+                        .col-md-7
+                            input.form-control(type='email', name='myEmail', ng-model='email',ng-pattern='/^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+/' ng-required=true, placeholder='100113408@qq.com')
+                        p.help-block.col-md-3(ng-show='myForm.myEmail.$invalid') 邮箱格式不正确
+                    .form-group
+                        label.required.control-label.col-md-2(for='') &#x5BC6;&#x7801;
+                        .col-md-7
+                            input.form-control(type='password', name='myPass',ng-model='password',ng-minlength='6', ng-required=true, placeholder='不少于 6 位')
+                        p.help-block.col-md-3(ng-show='myForm.myPass.$invalid') 密码格式不正确
+                    .form-group
+                        label.required.control-label.col-md-2(for='') &#x786E;&#x8BA4;&#x5BC6;&#x7801;
+                        .col-md-7
+                            input.form-control(type='password', name='myRepass',ng-model='rePassword',ng-minlength='6', placeholder='不少于 6 位')
+                        p.help-block.col-md-3(ng-show='password!=rePassword') 密码输入不一致
+                    .form-group
+                        .checkbox.col-md-offset-2
+                            label.required
+                                input(type='checkbox',name='isAgree',ng-model='isAgree')
+                                span &#x540C;&#x610F;&#x5E76;&#x63A5;&#x53D7;
+                                    a(href='#', target='_blank', data-toggle='modal', data-target='#register_license_modal') &#x300A;&#x670D;&#x52A1;&#x6761;&#x6B3E;&#x300B;
+                    .form-group
+                        .col-md-7.col-md-offset-2
+                            button.btn.btn-primary.btn-block.btn-lg(type='submit',ng-disabled='!isAgree||myForm.$invalid||myForm.$pristine') &#x6CE8;&#x518C;
+            .text-center.col-md-12.login-link
+                a(href='/login') 用户登录
+                |  |
+                a(href='/') 首页
+                |  |
+                a(href='/forgetPassword') 找回密码
+            #register_license_modal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myLargeModalLabel', aria-hidden='true')
+                .modal-dialog.modal-lg
+                    .modal-content
+                        .modal-header
+                            button.close(type='button', data-dismiss='modal', aria-label='Close')
+                                span(aria-hidden='true') &times;
+                            h4.modal-title.text-center &#x7A0B;&#x5E8F;&#x733F;&#x95EE;&#x7B54;&#x670D;&#x52A1;&#x6761;&#x6B3E;
+                        .modal-body
+                            div(style='height: 450px;overflow:scroll;')
+                                p
+                                    | &#x7A0B;&#x5E8F;&#x733F;&#x95EE;&#x7B54;&#x670D;&#x52A1;&#x6761;&#x6B3E;
+                                    br
+                        .modal-footer
+                            button.btn.btn-default(type='button', data-dismiss='modal') &#x5173;&#x95ED;
+        script(src='./static/components/jquery/dist/jquery.js')
+        script(src='./static/components/bootstrap/dist/js/bootstrap.js')
+        script(src='./js/register.js')
+

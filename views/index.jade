@@ -1,0 +1,48 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    title 程序员问答网站
+    meta(name='keywords', content='问答网站')
+    meta(name='description', content='程序员，为代码而生！大神问答，为程序员而生！')
+    link(rel='stylesheet', href='./static/components/bootstrap/dist/css/bootstrap.css')
+    link(rel='stylesheet', href='./static/components/font-awesome/css/font-awesome.css')
+    link(rel='stylesheet', href='./css/global.css')
+  body
+    include layout/header.jade
+    .wrap
+      .container
+        .col-xs-12.col-md-9.main
+          .widget-box.mb-10
+          .widget-box.clearfix
+          .widget-box
+            .job-list-item.row
+              .col-md-6
+                h4.widget-box-title
+                  | 最新问题
+                  a(href='#/questions/newest', target='_blank', title='更多') &raquo;
+                ul.widget-links.list-unstyled
+                  each question in newQuestion
+                    li.widget-links-item
+                      a(title='#{question.info}', target='_blank', href='/questiondetail/#{question.id}') #{question.info}
+                      small.text-muted #{question.answer} 回答
+              .col-md-6
+                h4.widget-box-title
+                  | &#x60AC;&#x8D4F;&#x95EE;&#x9898;
+                  a(href='#/questions/reward', target='_blank', title='更多') &raquo;
+                ul.widget-links.list-unstyled
+                  each question in rewardQuestion
+                    li.widget-links-item
+                      span.text-gold
+                        i.fa.fa-database #{question.reward}&nbsp;&nbsp;
+                      a(target='_blank', title='#{question.info}', href='/questiondetail/#{question.id}') #{question.info}
+          .widget-box
+            .job-list-item.row
+              .col-md-6
+              .col-md-6
+        include layout/side.jade
+    include layout/footer.jade
+    script(src='./static/components/jquery/dist/jquery.js')
+    script(src='./static/components/bootstrap/dist/js/bootstrap.js')
+

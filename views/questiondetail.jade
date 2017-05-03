@@ -1,0 +1,304 @@
+doctype html
+html(lang='zh-cn')
+    head
+        meta(charset='UTF-8')
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+        title &#x95EE;&#x7B54;&#x7F51;&#x7AD9;
+        meta(name='keywords', content='问答网站')
+        meta(name='description', content='程序员，为代码而生！大神问答，为程序员而生！')
+        link(rel='stylesheet', href='../static/components/bootstrap/dist/css/bootstrap.css')
+        link(rel='stylesheet', href='../static/components/font-awesome/css/font-awesome.css')
+        link(rel='stylesheet', href='../css/global.css')
+        link(rel='stylesheet', href='../static/components/summernote/dist/summernote.css')
+    body
+        include layout/header
+        .wrap
+            .container
+                .row.mt-10
+                    .col-xs-12.col-md-9.main
+                        .widget-question
+                            h4.title  #{question.info}
+                            ul.taglist-inline
+                                li.tagPopup
+                                    a.tag(href='#/topic/%E8%BF%90%E7%BB%B4') &#x8FD0;&#x7EF4;
+                            .description.mt-10
+                                .text-fmt
+                                .post-opt.mt-10
+                                    ul.list-inline
+                                        li
+                                            a.comments(data-toggle='collapse', href='#comments-question-1064', aria-expanded='false', aria-controls='comment-1064')
+                                                i.fa.fa-comment-o
+                                                |  #{question.comments} 条评论
+                                #comments-question-1064.collapse.widget-comments.mb-20(data-source_type='question', data-source_id='1064')
+                                    .widget-comment-list
+                                    .widget-comment-form.row
+                                        form.col-md-12
+                                            .form-group
+                                                textarea#comment-question-content-1064.form-control(name='content', placeholder='写下你的评论')
+                                        .col-md-12.text-right
+                                            a.text-muted.collapse-cancel(href='#', data-collapse_id='comments-question-1064') &#x53D6;&#x6D88;
+                                            button#question-comment-1064-btn.btn.btn-primary.btn-sm.ml-10.comment-btn(type='submit', data-token='P7N3KhfFb4xZslpAr0B865JG9MTtGWA05FL82IPU', data-source_id='1064', data-source_type='question', data-to_user_id='0') &#x63D0;&#x4EA4;&#x8BC4;&#x8BBA;
+                        .widget-answers.mt-15
+                            .btn-group.pull-right(role='group')
+                                a.btn.btn-default.btn-xs.active(href='#/question/1064') &#x9ED8;&#x8BA4;&#x6392;&#x5E8F;
+                                a#sortby-created.btn.btn-default.btn-xs(href='#/question/1064?sort=created_at') &#x65F6;&#x95F4;&#x6392;&#x5E8F;
+                            h2.h4.post-title  #{question.answer} 个回答
+                            .media
+                                .media-left
+                                    a.avatar-link.user-card(href='#/people/5', target='_blank')
+                                        img.avatar-40(src='../img/#{answer.avatar}', alt='小火影')
+                                .media-body
+                                    .media-heading
+                                        strong
+                                            a.mr-5.user-card(href='#/people/5') #{answer.answerUser}
+                                            span.text-gold
+                                        span.answer-time.text-m  uted.hidden-xs #{answer.createTime}
+                                    .content!=answer.content
+                                    .media-footer
+                                        ul.list-inline.mb-20
+                                            li
+                                                a.comments(data-toggle='collapse', href='#comments-answer-1056', aria-expanded='false', aria-controls='comment-1056')
+                                                    i.fa.fa-comment-o &nbsp;&nbsp;#{answer.comments} 条评论
+                                            li.pull-right
+                                                button.btn.btn-sm.btn-support.btn-success(data-source_id='1056', data-source_type='answer', data-support_num='0')
+                                                    i.fa.fa-thumbs-o-up
+                                                    |  &#x8D5E;&#x540C;
+                                    #comments-answer-1056.collapse.widget-comments.mb-20(data-source_type='answer', data-source_id='1056')
+                                        .widget-comment-list
+                                        .widget-comment-form.row
+                                            form.col-md-12
+                                                .form-group
+                                                    textarea#comment-answer-content-1056.form-control(name='content', placeholder='写下你的评论')
+                                            .col-md-12.text-right
+                                                a.text-muted.collapse-cancel(href='#', data-collapse_id='comments-answer-1056') &#x53D6;&#x6D88;
+                                                button#answer-comment-1056-btn.btn.btn-primary.btn-sm.ml-10.comment-btn(type='submit', data-token='P7N3KhfFb4xZslpAr0B865JG9MTtGWA05FL82IPU', data-source_id='1056', data-source_type='answer', data-to_user_id='0') 提价评论
+                            .text-center
+                        .widget-answer-form.mt-15
+                            form#answer_form.editor-wrap(name='answerForm', action='#/answer/store', method='post')
+                                input#answer_token(type='hidden', name='_token', value='P7N3KhfFb4xZslpAr0B865JG9MTtGWA05FL82IPU')
+                                input#question_id(type='hidden', value='1064', name='question_id')
+                                .form-group
+                                    #answer_editor(style='display: none;')
+                                #answerSubmit.mt-15.clearfix
+                                    .checkbox.pull-left
+                                        label
+                                            input#attendTo(type='checkbox', name='followed', value='1', checked='')
+                                            | &#x5173;&#x6CE8;&#x8BE5;&#x95EE;&#x9898;
+                                    .pull-right
+                                        input#answer_editor_content(type='hidden', name='content', value='<p><br></p>')
+                                        button.btn.btn-primary.pull-right(type='submit') &#x63D0;&#x4EA4;&#x56DE;&#x7B54;
+                    .col-xs-12.col-md-3.side
+                        .widget-box
+                            ul.widget-action.list-unstyled
+                                li
+                                    button#follow-button.btn.btn-success.btn-sm(type='button', data-source_type='question', data-questionid='#{question.id}', data-show_num='true', data-toggle='tooltip', data-placement='right', title='', data-original-title='关注后将获得更新提醒') &#x5173;&#x6CE8;
+                                    strong#follower-num #{question.follow}
+                                    |  关注
+                                li
+                                    button#collect-button.btn.btn-default.btn-sm(data-source_type='question', data-source_id='1064')  收藏
+                                    strong#collection-num #{question.subscriber}
+                                    |  收藏&nbsp;&nbsp;
+                                    strong.no-stress #{question.visits} 浏览
+                                li
+                                    i.fa.fa-clock-o
+                                    a(href='#/people/8', target='_blank') #{question.poster}
+                                    |  提出于 #{question.createTime}
+                        .widget-box
+                            h2.h4.widget-box__title &#x76F8;&#x4F3C;&#x95EE;&#x9898;
+                            ul.widget-links.list-unstyled.list-text
+                                li.widget-links-item
+                                    a(title='Permission denied (publickey,gssapi-keyex,gssapi-with-mic)', href='#/question/1015') Permission denied (publickey,gssapi-keyex,gssapi-with-mic)
+                                    small.text-muted 1 &#x56DE;&#x7B54;
+                                li.widget-links-item
+                                    a(title='我在ssh配置了免密码登录，但是登录时提示还需要密码', href='#/question/1014') &#x6211;&#x5728;ssh&#x914D;&#x7F6E;&#x4E86;&#x514D;&#x5BC6;&#x7801;&#x767B;&#x5F55;&#xFF0C;&#x4F46;&#x662F;&#x767B;&#x5F55;&#x65F6;&#x63D0;&#x793A;&#x8FD8;&#x9700;&#x8981;&#x5BC6;&#x7801;
+                                    small.text-muted 1 &#x56DE;&#x7B54;
+                                li.widget-links-item
+                                    a(title='500 OOPS: cannot change directory:/home/', href='#/question/1004') 500 OOPS: cannot change directory:/home/
+                                    small.text-muted 1 &#x56DE;&#x7B54;
+                                li.widget-links-item
+                                    a(title='vmvare安装centos6.x后虚拟机网络设置问题', href='#/question/1000') vmvare&#x5B89;&#x88C5;centos6.x&#x540E;&#x865A;&#x62DF;&#x673A;&#x7F51;&#x7EDC;&#x8BBE;&#x7F6E;&#x95EE;&#x9898;
+                                    small.text-muted 1 &#x56DE;&#x7B54;
+                                li.widget-links-item
+                                    a(title='centos下yum命令', href='#/question/968') centos&#x4E0B;yum&#x547D;&#x4EE4;
+                                    small.text-muted 1 &#x56DE;&#x7B54;
+                #appendReward.modal(tabindex='-1', role='dialog', aria-labelledby='appendRewardLabel')
+                    .modal-dialog(role='document')
+                        .modal-content
+                            .modal-header
+                                button.close(type='button', data-dismiss='modal', aria-label='Close')
+                                    span(aria-hidden='true') &times;
+                                h4#appendModalLabel.modal-title &#x8FFD;&#x52A0;&#x60AC;&#x8D4F;
+                            .modal-body
+                                #rewardAlert.alert.alert-success(role='alert')
+                                    i.fa.fa-exclamation-circle
+                                    |  &#x63D0;&#x9AD8;&#x60AC;&#x8D4F;&#xFF0C;&#x4EE5;&#x63D0;&#x9AD8;&#x95EE;&#x9898;&#x7684;&#x5173;&#x6CE8;&#x5EA6;&#xFF01;
+                                form#rewardForm.form-inline(action='#/question/1064/appendReward', method='post')
+                                    input(type='hidden', name='_token', value='P7N3KhfFb4xZslpAr0B865JG9MTtGWA05FL82IPU')
+                                    .form-group
+                                        label(for='reward') &#x8FFD;&#x52A0;
+                                        select#question_coins.form-control(name='coins')
+                                            option(value='3', selected='') 3
+                                            option(value='5') 5
+                                            option(value='10') 10
+                                            option(value='15') 15
+                                            option(value='30') 30
+                                            option(value='50') 50
+                                            option(value='80') 80
+                                            option(value='100') 100
+                                        |  &#x4E2A;&#x91D1;&#x5E01;
+                                    .form-group
+                                        | &#xFF08;&#x60A8;&#x76EE;&#x524D;&#x5171;&#x6709;
+                                        span.text-gold 1
+                                        |  &#x4E2A;&#x91D1;&#x5E01;&#xFF09;
+                            .modal-footer
+                                button.btn.btn-default(type='button', data-dismiss='modal') &#x53D6;&#x6D88;
+                                button#appendRewardSubmit.btn.btn-primary(type='button') &#x786E;&#x8BA4;&#x8FFD;&#x52A0;
+                #adoptAnswer.modal(tabindex='-1', role='dialog', aria-labelledby='adoptAnswerLabel')
+                    .modal-dialog(role='document')
+                        .modal-content
+                            .modal-header
+                                button.close(type='button', data-dismiss='modal', aria-label='Close')
+                                    span(aria-hidden='true') &times;
+                                h4#adoptModalLabel.modal-title &#x91C7;&#x7EB3;&#x56DE;&#x7B54;
+                            .modal-body
+                                #adoptAnswerAlert.alert.alert-warning(role='alert')
+                                    i.fa.fa-exclamation-circle
+                                    |  &#x786E;&#x8BA4;&#x91C7;&#x7EB3;&#x8BE5;&#x56DE;&#x7B54;&#x4E3A;&#x6700;&#x4F73;&#x7B54;&#x6848;&#xFF1F;
+                                blockquote#answer_quote
+                            .modal-footer
+                                button.btn.btn-default(type='button', data-dismiss='modal') &#x53D6;&#x6D88;
+                                button#adoptAnswerSubmit.btn.btn-primary(type='button') &#x91C7;&#x7EB3;&#x8BE5;&#x56DE;&#x7B54;
+        footer#footer
+            .container
+                ul.list-unstyled.list-inline
+                    li &#x53CB;&#x60C5;&#x94FE;&#x63A5;
+                    li
+                        a(target='_blank', href='http://www.ibeifeng.com') &#x5317;&#x98CE;
+                    li
+                        a(target='_blank', href='http://www.baidu.com') &#x767E;&#x5EA6;
+                    li
+                        a(target='_blank', href='http://www.google.com') &#x8C37;&#x6B4C;
+                .text-center
+                    a(href='#') &#x5173;&#x4E8E;&#x6211;&#x4EEC;
+                    a(href='#') &#x8054;&#x7CFB;&#x6211;&#x4EEC;
+                    a(href='#') Powered by Leslie 1.0
+                .copyright.mt-10
+                    | Copyright &copy; 2017
+                    a(href='#') &#x7A0B;&#x5E8F;&#x733F;&#x95EE;&#x7B54;
+                    |  All Rights Reserved.
+                    a(href='#', target='_blank') Leslie
+                    |  &#x7248;&#x6743;&#x6240;&#x6709;
+                .copyright.mt-10
+                    a(href='http://www.miitbeian.gov.cn', target='_blank') &#x6CAA;ICP&#x5907;11111111&#x53F7;-1
+        #sendTo_message_model.modal.fade(tabindex='-1', role='dialog', aria-labelledby='exampleModalLabel')
+            .modal-dialog(role='document')
+                .modal-content
+                    .modal-header
+                        button.close(type='button', data-dismiss='modal', aria-label='Close')
+                            span(aria-hidden='true') &times;
+                        h4#exampleModalLabel.modal-title &#x53D1;&#x9001;&#x79C1;&#x4FE1;
+                    .modal-body
+                        form#sendTo_message_form(name='messageForm')
+                            input(type='hidden', name='_token', value='f5Zj2qrN8CA7OzwQTbq0ytgPvmU9GaA7z3cvT15w')
+                            input#to_user_id(type='hidden', name='to_user_id', value='0')
+                            .form-group
+                                label.control-label(for='to_user_name') &#x53D1;&#x7ED9;:
+                                span#to_user_name
+                            .form-group
+                                label.control-label(for='message-text') &#x5185;&#x5BB9;:
+                                textarea#message-text.form-control(name='content')
+                    .modal-footer
+                        button.btn.btn-default(type='button', data-dismiss='modal') &#x53D6;&#x6D88;
+                        button#sendTo_submit.btn.btn-primary(type='button') &#x53D1;&#x9001;
+        script(src='../static/components/jquery/dist/jquery.js')
+        script(src='../static/components/bootstrap/dist/js/bootstrap.js')
+        script(src='../js/global.js')
+        script(src='../static/components/summernote/dist/summernote.js')
+        script(src='../static/components/summernote/lang/summernote-zh-CN.js')
+        script(type='text/javascript').
+            $(document).ready(function() {
+                //添加关注
+                $("#follow-button").click(function () {
+                    var questionId = $(this).data('questionid');
+                    console.log(questionId);
+                    $.post('/ajax/addFollow',{questionId:questionId},function (data, xhr, statusText) {
+                        console.log(data);
+                        alert(data.message);
+                    });
+                });
+                /*问题悬赏*/
+                $("#appendRewardSubmit").click(function(){
+                    var user_total_conis = '3';
+                    var reward = $("#question_coins").val();
+                    if(reward>parseInt(user_total_conis)){
+                        $("#rewardAlert").attr('class','alert alert-warning');
+                        $("#rewardAlert").html('金币数不能大于'+user_total_conis);
+                    }else{
+                        $("#rewardAlert").empty();
+                        $("#rewardAlert").attr('class','');
+                        $("#rewardForm").submit();
+                    }
+                });
+                /*回答编辑器初始化*/
+                $('#answer_editor').summernote({
+                    lang: 'zh-CN',
+                    height: 160,
+                    placeholder:'撰写答案',
+                    toolbar: [ ['common', ['style','bold','ol','link','picture','clear','fullscreen']] ],
+                    callbacks: {
+                        onChange:function (contents, $editable) {
+                            var code = $(this).summernote("code");
+                            $("#answer_editor_content").val(code);
+                        },
+                        onImageUpload:function(files) {
+                            upload_editor_image(files[0],'answer_editor');
+                        }
+                    }
+                });
+                /*评论提交*/
+                $(".comment-btn").click(function(){
+                    var source_id = $(this).data('source_id');
+                    var source_type = $(this).data('source_type');
+                    var to_user_id = $(this).data('to_user_id');
+                    var token = $(this).data('token');
+                    var content = $("#comment-"+source_type+"-content-"+source_id).val();
+                    add_comment(token,source_type,source_id,content,to_user_id);
+                    $("#comment-content-"+source_id+"").val('');
+                });
+                $(".widget-comments").on('show.bs.collapse', function () {
+                    load_comments($(this).data('source_type'),$(this).data('source_id'));
+                });
+                $(".widget-comments").on('hide.bs.collapse', function () {
+                    clear_comments($(this).data('source_type'),$(this).data('source_id'));
+                });
+                /*收藏问题或文章*/
+                $("#collect-button").click(function(){
+                    $("#collect-button").button('loading');
+                    var source_type = $(this).data('source_type');
+                    var source_id = $(this).data('source_id');
+                    var collection_num = $("#collection-num").html();
+                    $.get('/collect/'+source_type+'/'+source_id,function(msg){
+                        $("#collect-button").removeClass('disabled');
+                        $("#collect-button").removeAttr('disabled');
+                        if(msg=='collected'){
+                            $("#collect-button").html('已收藏');
+                            $("#collection-num").html(parseInt(collection_num)+1);
+                        }else{
+                            $("#collect-button").html('收藏');
+                            $("#collection-num").html(parseInt(collection_num)-1);
+                        }
+                    });
+                });
+                /*采纳回答为最佳答案*/
+                $(".adopt-answer").click(function(){
+                    var answer_id = $(this).data('answer_id');
+                    $("#adoptAnswerSubmit").attr('data-answer_id',answer_id);
+                    $("#answer_quote").html($(this).data('answer_content'));
+                });
+                $("#adoptAnswerSubmit").click(function(){
+                    document.location = "/answer/adopt/"+$(this).data('answer_id');
+                });
+            });
+        style(type='text/css').
+            .content a{text-decoration:underline;}
+            .text-fmt a{text-decoration:underline;}

@@ -1,0 +1,442 @@
+doctype html
+html(lang='zh-cn')
+    head
+        meta(charset='UTF-8')
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+        title &#x95EE;&#x7B54;&#x7F51;&#x7AD9;
+        meta(name='keywords', content='问答网站')
+        meta(name='description', content='程序员，为代码而生！大神问答，为程序员而生！')
+        link(rel='stylesheet', href='./static/components/bootstrap/dist/css/bootstrap.css')
+        link(rel='stylesheet', href='./static/components/font-awesome/css/font-awesome.css')
+        link(rel='stylesheet', href='./css/global.css')
+    body
+        include layout/header
+        .wrap
+            .container
+                .col-xs-12.col-md-9.main
+                    ul.nav.nav-tabs.nav-tabs-zen.mb10
+                        li.active
+                            a(href='#/questions') &#x6700;&#x65B0;&#x7684;
+                        li
+                            a(href='#/questions/hottest') &#x70ED;&#x95E8;&#x7684;
+                        li
+                            a(href='#/questions/reward') &#x60AC;&#x8D4F;&#x7684;
+                        li
+                            a(href='#/questions/unAnswered') &#x672A;&#x56DE;&#x7B54;&#x7684;
+                    .stream-list.question-stream
+                        section.stream-list-item
+                            .qa-rank
+                                .answers.answered
+                                    | 1
+                                    small &#x56DE;&#x7B54;
+                                .views.hidden-xs
+                                    | 103
+                                    small &#x6D4F;&#x89C8;
+                            .summary
+                                ul.author.list-inline
+                                    li
+                                        a(href='#/people/8', target='_blank') &#x67EF;&#x5357;@&#xFFE5;
+                                        span.split
+                                        span.askDate 2017-01-05 15:46
+                                h2.title
+                                    a(href='#/question/1064', target='_blank') CentOS&#x5B89;&#x88C5;LAMP(Apache+MySQL+PHP)
+                                ul.taglist-inline.ib
+                                    li.tagPopup
+                                        a.tag(target='_blank', href='#/topic/%E8%BF%90%E7%BB%B4') &#x8FD0;&#x7EF4;
+                        section.stream-list-item
+                            .qa-rank
+                                .answers.answered
+                                    | 1
+                                    small &#x56DE;&#x7B54;
+                                .views.hidden-xs
+                                    | 96
+                                    small &#x6D4F;&#x89C8;
+                            .summary
+                                ul.author.list-inline
+                                    li
+                                        a(href='#/people/5', target='_blank') &#x5C0F;&#x706B;&#x5F71;
+                                        span.split
+                                        span.askDate 2016-12-27 10:57
+                                h2.title
+                                    a(href='#/question/1063', target='_blank') mac&#x4E2D;&#x5B89;&#x88C5;mysql&#x7684;root&#x5BC6;&#x7801;&#x5728;&#x54EA;?
+                                ul.taglist-inline.ib
+                                    li.tagPopup
+                                        a.tag(target='_blank', href='#/topic/MYSQL') MYSQL
+                        section.stream-list-item
+                            .qa-rank
+                                .answers
+                                    | 0
+                                    small &#x56DE;&#x7B54;
+                                .views.hidden-xs
+                                    | 78
+                                    small &#x6D4F;&#x89C8;
+                            .summary
+                                ul.author.list-inline
+                                    li
+                                        a(href='#/people/8', target='_blank') &#x67EF;&#x5357;@&#xFFE5;
+                                        span.split
+                                        span.askDate 2016-12-26 16:32
+                                h2.title
+                                    a(href='#/question/1062', target='_blank') python&#x4E2D;&#x7684;flask&#x4E2D;app=Flask(__name__)
+                                ul.taglist-inline.ib
+                                    li.tagPopup
+                                        a.tag(target='_blank', href='#/topic/Python') Python
+                        section.stream-list-item
+                            .qa-rank
+                                .answers.answered
+                                    | 1
+                                    small &#x56DE;&#x7B54;
+                                .views.hidden-xs
+                                    | 173
+                                    small &#x6D4F;&#x89C8;
+                            .summary
+                                ul.author.list-inline
+                                    li
+                                        a(href='#/people/4', target='_blank') Leon
+                                        span.split
+                                        span.askDate 2016-12-26 15:27
+                                h2.title
+                                    a(href='#/question/1061', target='_blank') Mac Python &#x65E0;&#x6CD5;&#x5BFC;&#x5165;Opencv&#x95EE;&#x9898;
+                                ul.taglist-inline.ib
+                                    li.tagPopup
+                                        a.tag(target='_blank', href='#/topic/iOS') iOS
+                        section.stream-list-item
+                            .qa-rank
+                                .answers.answered
+                                    | 1
+                                    small &#x56DE;&#x7B54;
+                                .views.hidden-xs
+                                    | 188
+                                    small &#x6D4F;&#x89C8;
+                            .summary
+                                ul.author.list-inline
+                                    li
+                                        a(href='#/people/18', target='_blank') &#x5495;&#x549A;
+                                        span.split
+                                        span.askDate 2016-12-23 16:38
+                                h2.title
+                                    a(href='#/question/1060', target='_blank') Opencv3&#x5728;MAC &#x4E2D;&#x5B89;&#x88C5;&#x95EE;&#x9898;
+                                ul.taglist-inline.ib
+                                    li.tagPopup
+                                        a.tag(target='_blank', href='#/topic/iOS') iOS
+                        section.stream-list-item
+                            .qa-rank
+                                .answers.answered
+                                    | 1
+                                    small &#x56DE;&#x7B54;
+                                .views.hidden-xs
+                                    | 165
+                                    small &#x6D4F;&#x89C8;
+                            .summary
+                                ul.author.list-inline
+                                    li
+                                        a(href='#/people/10', target='_blank') &#x859B;&#x5B9A;&#x8C14;&#x7684;&#x30FE;(=&#xFF9F;&#xFF65;&#xFF9F;=)&#xFF89;
+                                        span.split
+                                        span.askDate 2016-12-22 18:15
+                                h2.title
+                                    a(href='#/question/1059', target='_blank') iOS&#x5F00;&#x53D1;&#xFF0C;&#x600E;&#x4E48;&#x751F;&#x6210;&#x4E2D;&#x95F4;&#x5E26;&#x56FE;&#x7247;&#x7684;&#x4E8C;&#x7EF4;&#x7801;&#xFF1F;
+                                ul.taglist-inline.ib
+                                    li.tagPopup
+                                        a.tag(target='_blank', href='#/topic/iOS') iOS
+                        section.stream-list-item
+                            .qa-rank
+                                .answers.answered
+                                    | 1
+                                    small &#x56DE;&#x7B54;
+                                .views.hidden-xs
+                                    | 105
+                                    small &#x6D4F;&#x89C8;
+                            .summary
+                                ul.author.list-inline
+                                    li
+                                        a(href='#/people/5', target='_blank') &#x5C0F;&#x706B;&#x5F71;
+                                        span.split
+                                        span.askDate 2016-12-16 11:50
+                                h2.title
+                                    a(href='#/question/1058', target='_blank') python&#x4E2D;enumerate&#x51FD;&#x6570;&#x4EC0;&#x4E48;&#x610F;&#x601D;
+                                ul.taglist-inline.ib
+                                    li.tagPopup
+                                        a.tag(target='_blank', href='#/topic/Python') Python
+                        section.stream-list-item
+                            .qa-rank
+                                .answers
+                                    | 0
+                                    small &#x56DE;&#x7B54;
+                                .views.hidden-xs
+                                    | 92
+                                    small &#x6D4F;&#x89C8;
+                            .summary
+                                ul.author.list-inline
+                                    li
+                                        a(href='#/people/8', target='_blank') &#x67EF;&#x5357;@&#xFFE5;
+                                        span.split
+                                        span.askDate 2016-12-15 10:16
+                                h2.title
+                                    a(href='#/question/1057', target='_blank') &#x6570;&#x636E;&#x7684;&#x6293;&#x53D6;&#x600E;&#x6837;&#x6293;&#x53D6;&#xFF1F;
+                                ul.taglist-inline.ib
+                                    li.tagPopup
+                                        a.tag(target='_blank', href='#/topic/%E5%A4%A7%E6%95%B0%E6%8D%AE') &#x5927;&#x6570;&#x636E;
+                        section.stream-list-item
+                            .qa-rank
+                                .answers.answered
+                                    | 1
+                                    small &#x56DE;&#x7B54;
+                                .views.hidden-xs
+                                    | 174
+                                    small &#x6D4F;&#x89C8;
+                            .summary
+                                ul.author.list-inline
+                                    li
+                                        a(href='#/people/5', target='_blank') &#x5C0F;&#x706B;&#x5F71;
+                                        span.split
+                                        span.askDate 2016-12-09 09:07
+                                h2.title
+                                    a(href='#/question/1056', target='_blank') html&#x7684;frame&#x8BE6;&#x89E3;
+                                ul.taglist-inline.ib
+                                    li.tagPopup
+                                        a.tag(target='_blank', href='#/topic/Web%E5%89%8D%E7%AB%AF') Web&#x524D;&#x7AEF;
+                        section.stream-list-item
+                            .qa-rank
+                                .answers.answered
+                                    | 1
+                                    small &#x56DE;&#x7B54;
+                                .views.hidden-xs
+                                    | 176
+                                    small &#x6D4F;&#x89C8;
+                            .summary
+                                ul.author.list-inline
+                                    li
+                                        a(href='#/people/9', target='_blank') why
+                                        span.split
+                                        span.askDate 2016-12-07 10:59
+                                h2.title
+                                    a(href='#/question/1055', target='_blank')
+                                        | eclipse maven&#x7F16;&#x8BD1;&#x9879;&#x76EE;-Dmaven.multiModuleProjectDirectory system propery is not set. Check $M2_HOME environment variable and mvn script match.
+                                ul.taglist-inline.ib
+                                    li.tagPopup
+                                        a.tag(target='_blank', href='#/topic/Java') Java
+                        section.stream-list-item
+                            .qa-rank
+                                .answers
+                                    | 0
+                                    small &#x56DE;&#x7B54;
+                                .views.hidden-xs
+                                    | 155
+                                    small &#x6D4F;&#x89C8;
+                            .summary
+                                ul.author.list-inline
+                                    li
+                                        a(href='#/people/9', target='_blank') why
+                                        span.split
+                                        span.askDate 2016-12-07 10:58
+                                h2.title
+                                    a(href='#/question/1054', target='_blank')
+                                        | eclipse&#x4E2D;maven&#x5DE5;&#x7A0B;&#x4E0A;&#x663E;&#x793A;&#x6709;&#x9519;&#xFF0C;problems&#x4E2D;&#x663E;&#x793A;Description Resource Path Location Type An error occurred while filtering resources mymaven line 1 Maven Java EE Configuration Problem&#xFF0C;&#x4EC0;&#x4E48;&#x539F;&#x56E0;&#xFF1F;
+                                ul.taglist-inline.ib
+                                    li.tagPopup
+                                        a.tag(target='_blank', href='#/topic/Java') Java
+                        section.stream-list-item
+                            .qa-rank
+                                .answers.answered
+                                    | 1
+                                    small &#x56DE;&#x7B54;
+                                .views.hidden-xs
+                                    | 155
+                                    small &#x6D4F;&#x89C8;
+                            .summary
+                                ul.author.list-inline
+                                    li
+                                        a(href='#/people/10', target='_blank') &#x859B;&#x5B9A;&#x8C14;&#x7684;&#x30FE;(=&#xFF9F;&#xFF65;&#xFF9F;=)&#xFF89;
+                                        span.split
+                                        span.askDate 2016-12-05 18:11
+                                h2.title
+                                    a(href='#/question/1053', target='_blank') iOS&#x5F00;&#x53D1;&#xFF0C;&#x81EA;&#x5B9A;&#x4E49;&#x7684;UIView&#x5173;&#x8054;xib&#x540E;&#xFF0C;&#x4E3A;&#x4EC0;&#x4E48;&#x62D6;&#x62FD;&#x5230;xib&#x4E0A;&#x7684;&#x63A7;&#x4EF6;&#x4E0D;&#x663E;&#x793A;&#x5462;&#xFF1F;&#x8981;&#x600E;&#x4E48;&#x89E3;&#x51B3;&#xFF1F;
+                                ul.taglist-inline.ib
+                                    li.tagPopup
+                                        a.tag(target='_blank', href='#/topic/iOS') iOS
+                        section.stream-list-item
+                            .qa-rank
+                                .answers.answered
+                                    | 1
+                                    small &#x56DE;&#x7B54;
+                                .views.hidden-xs
+                                    | 176
+                                    small &#x6D4F;&#x89C8;
+                            .summary
+                                ul.author.list-inline
+                                    li
+                                        a(href='#/people/5', target='_blank') &#x5C0F;&#x706B;&#x5F71;
+                                        span.split
+                                        span.askDate 2016-12-05 16:47
+                                h2.title
+                                    a(href='#/question/1052', target='_blank') Eclipse&#x7684;&#x5E38;&#x7528;&#x5FEB;&#x6377;&#x952E;
+                                ul.taglist-inline.ib
+                                    li.tagPopup
+                                        a.tag(target='_blank', href='#/topic/Java') Java
+                        section.stream-list-item
+                            .qa-rank
+                                .answers
+                                    | 0
+                                    small &#x56DE;&#x7B54;
+                                .views.hidden-xs
+                                    | 155
+                                    small &#x6D4F;&#x89C8;
+                            .summary
+                                ul.author.list-inline
+                                    li
+                                        a(href='#/people/5', target='_blank') &#x5C0F;&#x706B;&#x5F71;
+                                        span.split
+                                        span.askDate 2016-12-05 15:19
+                                h2.title
+                                    a(href='#/question/1051', target='_blank') JAVA&#x4E2D;&#x7684;Collection&#x7684;&#x7528;&#x6CD5;&#xFF1F;
+                                ul.taglist-inline.ib
+                                    li.tagPopup
+                                        a.tag(target='_blank', href='#/topic/Java') Java
+                        section.stream-list-item
+                            .qa-rank
+                                .answers.answered
+                                    | 1
+                                    small &#x56DE;&#x7B54;
+                                .views.hidden-xs
+                                    | 177
+                                    small &#x6D4F;&#x89C8;
+                            .summary
+                                ul.author.list-inline
+                                    li
+                                        a(href='#/people/5', target='_blank') &#x5C0F;&#x706B;&#x5F71;
+                                        span.split
+                                        span.askDate 2016-12-02 14:55
+                                h2.title
+                                    a(href='#/question/1050', target='_blank') java&#x4E2D;&#x5E26;static&#x7684;&#x6210;&#x5458;&#x53D8;&#x91CF;&#x548C;&#x6210;&#x5458;&#x65B9;&#x6CD5;&#x7684;&#x4F7F;&#x7528;&#x65B9;&#x6CD5;&#x65F6;&#x4EC0;&#x4E48;&#xFF1F;
+                                ul.taglist-inline.ib
+                                    li.tagPopup
+                                        a.tag(target='_blank', href='#/topic/Java') Java
+                        section.stream-list-item
+                            .qa-rank
+                                .answers
+                                    | 0
+                                    small &#x56DE;&#x7B54;
+                                .views.hidden-xs
+                                    | 161
+                                    small &#x6D4F;&#x89C8;
+                            .summary
+                                ul.author.list-inline
+                                    li
+                                        a(href='#/people/5', target='_blank') &#x5C0F;&#x706B;&#x5F71;
+                                        span.split
+                                        span.askDate 2016-12-02 11:59
+                                h2.title
+                                    a(href='#/question/1049', target='_blank') JAVA&#x4E2D;&#x7684;Collection&#x7684;&#x7528;&#x6CD5;&#xFF1F;
+                                ul.taglist-inline.ib
+                                    li.tagPopup
+                                        a.tag(target='_blank', href='#/topic/Java') Java
+                        section.stream-list-item
+                            .qa-rank
+                                .answers.answered
+                                    | 1
+                                    small &#x56DE;&#x7B54;
+                                .views.hidden-xs
+                                    | 183
+                                    small &#x6D4F;&#x89C8;
+                            .summary
+                                ul.author.list-inline
+                                    li
+                                        a(href='#/people/10', target='_blank') &#x859B;&#x5B9A;&#x8C14;&#x7684;&#x30FE;(=&#xFF9F;&#xFF65;&#xFF9F;=)&#xFF89;
+                                        span.split
+                                        span.askDate 2016-12-01 16:19
+                                h2.title
+                                    a(href='#/question/1048', target='_blank') iOS&#x600E;&#x4E48;&#x4ECE;&#x6570;&#x7EC4;&#x4E2D;&#x7B5B;&#x9009;&#x51FA;&#x60F3;&#x8981;&#x7684;&#x6570;&#x636E;&#xFF1F;(&#x6570;&#x7EC4;&#x4E2D;&#x5B58;&#x50A8;&#x7684;&#x6A21;&#x578B;)
+                                ul.taglist-inline.ib
+                                    li.tagPopup
+                                        a.tag(target='_blank', href='#/topic/iOS') iOS
+                        section.stream-list-item
+                            .qa-rank
+                                .answers.answered
+                                    | 1
+                                    small &#x56DE;&#x7B54;
+                                .views.hidden-xs
+                                    | 73
+                                    small &#x6D4F;&#x89C8;
+                            .summary
+                                ul.author.list-inline
+                                    li
+                                        a(href='#/people/9', target='_blank') why
+                                        span.split
+                                        span.askDate 2016-12-01 16:19
+                                h2.title
+                                    a(href='#/question/1047', target='_blank') &#x6C42;spring aop demo
+                                ul.taglist-inline.ib
+                                    li.tagPopup
+                                        a.tag(target='_blank', href='#/topic/Java') Java
+                        section.stream-list-item
+                            .qa-rank
+                                .answers.answered
+                                    | 1
+                                    small &#x56DE;&#x7B54;
+                                .views.hidden-xs
+                                    | 152
+                                    small &#x6D4F;&#x89C8;
+                            .summary
+                                ul.author.list-inline
+                                    li
+                                        a(href='#/people/10', target='_blank') &#x859B;&#x5B9A;&#x8C14;&#x7684;&#x30FE;(=&#xFF9F;&#xFF65;&#xFF9F;=)&#xFF89;
+                                        span.split
+                                        span.askDate 2016-11-30 17:59
+                                h2.title
+                                    a(href='#/question/1046', target='_blank') iOS&#x5F00;&#x53D1;&#x4E2D;&#x8C13;&#x8BCD;&#x662F;&#x4EC0;&#x4E48;&#xFF0C;&#x600E;&#x4E48;&#x4F7F;&#x7528;&#xFF1F;
+                                ul.taglist-inline.ib
+                                    li.tagPopup
+                                        a.tag(target='_blank', href='#/topic/iOS') iOS
+                        section.stream-list-item
+                            .qa-rank
+                                .answers.answered
+                                    | 1
+                                    small &#x56DE;&#x7B54;
+                                .views.hidden-xs
+                                    | 68
+                                    small &#x6D4F;&#x89C8;
+                            .summary
+                                ul.author.list-inline
+                                    li
+                                        a(href='#/people/10', target='_blank') &#x859B;&#x5B9A;&#x8C14;&#x7684;&#x30FE;(=&#xFF9F;&#xFF65;&#xFF9F;=)&#xFF89;
+                                        span.split
+                                        span.askDate 2016-11-30 15:22
+                                h2.title
+                                    a(href='#/question/1044', target='_blank') iOS&#x5F00;&#x53D1;&#xFF0C;UIView&#x5982;&#x4F55;&#x5B9E;&#x73B0;&#x52A8;&#x753B;&#x6548;&#x679C;&#xFF1F;
+                                ul.taglist-inline.ib
+                                    li.tagPopup
+                                        a.tag(target='_blank', href='#/topic/iOS') iOS
+                    .text-center
+                        ul.pagination
+                            li.disabled
+                                span &laquo;
+                            li.active
+                                span 1
+                            li
+                                a(href='#/questions?page=2') 2
+                            li
+                                a(href='#/questions?page=3') 3
+                            li
+                                a(href='#/questions?page=4') 4
+                            li
+                                a(href='#/questions?page=5') 5
+                            li
+                                a(href='#/questions?page=6') 6
+                            li
+                                a(href='#/questions?page=7') 7
+                            li
+                                a(href='#/questions?page=8') 8
+                            li.disabled
+                                span ...
+                            li
+                                a(href='#/questions?page=51') 51
+                            li
+                                a(href='#/questions?page=52') 52
+                            li
+                                a(href='#/questions?page=2', rel='next') &raquo;
+                include layout/side
+        include layout/footer
+        script(src='./static/components/jquery/dist/jquery.js')
+        script(src='./static/components/bootstrap/dist/js/bootstrap.js')
+
+

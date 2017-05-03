@@ -1,0 +1,52 @@
+doctype html
+html(lang='zh-cn' ng-app='myApp')
+    head
+        meta(charset='utf-8')
+        meta(http-equiv='X-UA-Compatible', content='IE=edge')
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+        title &#x7528;&#x6237;&#x6CE8;&#x518C; - &#x7A0B;&#x5E8F;&#x733F;&#x95EE;&#x7B54;
+        meta(name='keywords', content='用户注册')
+        meta(name='description', content='用户注册')
+        script(src='./static/components/angular/angular.min.js')
+        link(rel='stylesheet', href='./static/components/bootstrap/dist/css/bootstrap.css')
+        link(rel='stylesheet', href='./static/components/font-awesome/css/font-awesome.css')
+        link(rel='stylesheet', href='./css/account.css')
+        //if lt IE 9
+          script(src='http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js')
+          script(src='http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js')
+    body
+        .container(ng-controller='myCtrl')
+            .header.text-center
+                h1
+                    a.logo(href='/') 程序员问答
+                p.description.text-muted (程序员问答() { console.log("程序员专用问答网站，又快又准找到问题答案"); })()
+            .col-md-6.col-md-offset-3.bg-white.login-wrap
+                h1.h4.text-center.text-muted.login-title 用户登录
+                form(role='form', name='loginForm',ng-submit='login()', method='POST',novalidate='novalidate')
+                    input(type='hidden', name='_token', value='f5Zj2qrN8CA7OzwQTbq0ytgPvmU9GaA7z3cvT15w')
+                    .form-group
+                        label.required 邮箱
+                        input.form-control(type='text', name='myEmail',ng-model='email' ng-pattern='/^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+/',placeholder='注册邮箱',)
+                        p.help-block(ng-show='loginForm.myEmail.$invalid') 邮箱格式错误
+                    .form-group
+                        label.required(for='') 密码
+                        input.form-control(type='password', name='myPass',ng-model='password',ng-minlength='6' ng-required=true, placeholder='不少于 6 位')
+                        p.help-block(ng-show='loginForm.myPass.$invalid') 密码不能少于6位
+                    .form-group.clearfix
+                        .checkbox.pull-left
+                            label
+                                input(name='remember', type='checkbox', ng-true-value='1',ng-false-value='0',ng-model='isRemember' ng-checked='true')
+                                |  记住登录状态
+                        button.btn.btn-primary.pull-right.pl20.pr20(type='submit',ng-disabled='loginForm.$invalid||loginForm.$pristine') 登录
+            .text-center.col-md-12.login-link
+                a(href='/register') 注册新账号
+                |  |
+                a(href='/') 首页
+                |  |
+                a(href='/forget') 找回密码
+        script(src='./static/components/jquery/dist/jquery.js')
+        script(src='./static/components/bootstrap/dist/js/bootstrap.js')
+        script(src='./js/login.js')
+
+
+

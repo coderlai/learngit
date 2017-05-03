@@ -1,0 +1,42 @@
+footer#footer
+    .container
+        ul.list-unstyled.list-inline
+            li 友情链接
+            li
+                a(target='_blank', href='http://www.ibeifeng.com') 北风
+            li
+                a(target='_blank', href='http://www.baidu.com') 百度
+            li
+                a(target='_blank', href='http://www.google.com') 谷歌
+        .text-center
+            a(href='#') &#x5173;&#x4E8E;&#x6211;&#x4EEC;
+            a(href='#') &#x8054;&#x7CFB;&#x6211;&#x4EEC;
+            a(href='#') Powered by Leslie 1.0
+        .copyright.mt-10
+            | Copyright &copy; 2017
+            a(href='#') 程序员问答
+            |  All Rights Reserved.
+            a(href='#', target='_blank') Leslie
+            |  版权所有
+        .copyright.mt-10
+            a(href='http://www.miitbeian.gov.cn', target='_blank') 沪ICP备11111111号-1
+#sendTo_message_model.modal.fade(tabindex='-1', role='dialog', aria-labelledby='exampleModalLabel')
+    .modal-dialog(role='document')
+        .modal-content
+            .modal-header
+                button.close(type='button', data-dismiss='modal', aria-label='Close')
+                    span(aria-hidden='true') &times;
+                h4#exampleModalLabel.modal-title &#x53D1;&#x9001;&#x79C1;&#x4FE1;
+            .modal-body
+                form#sendTo_message_form(name='messageForm')
+                    input(type='hidden', name='_token', value='f5Zj2qrN8CA7OzwQTbq0ytgPvmU9GaA7z3cvT15w')
+                    input#to_user_id(type='hidden', name='to_user_id', value='0')
+                    .form-group
+                        label.control-label(for='to_user_name') &#x53D1;&#x7ED9;:
+                        span#to_user_name
+                    .form-group
+                        label.control-label(for='message-text') &#x5185;&#x5BB9;:
+                        textarea#message-text.form-control(name='content')
+            .modal-footer
+                button.btn.btn-default(type='button', data-dismiss='modal') &#x53D6;&#x6D88;
+                button#sendTo_submit.btn.btn-primary(type='button') &#x53D1;&#x9001;

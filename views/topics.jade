@@ -1,0 +1,75 @@
+doctype html
+html(lang='en')
+    head
+        meta(charset='UTF-8')
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+        title &#x95EE;&#x7B54;&#x7F51;&#x7AD9;
+        meta(name='keywords', content='问答网站')
+        meta(name='description', content='程序员，为代码而生！大神问答，为程序员而生！')
+        link(rel='stylesheet', href='./static/components/bootstrap/dist/css/bootstrap.css')
+        link(rel='stylesheet', href='./static/components/font-awesome/css/font-awesome.css')
+        link(rel='stylesheet', href='./css/global.css')
+    body
+        include layout/header
+        .wrap
+            .container
+                h1.h3
+                    | 话题
+                    br
+                    small 话题是最有效的内容组织形式，正确的使用话题能更快的发现和解决你的问题
+                .row.tag-list.mt-20
+                    each topic in topicList
+                        section.topic-list-item.col-md-3
+                            .widget-topic
+                                h2.h4
+                                    a(href='/topic/#{topic.topicName}') #{topic.topicName}
+                                p  #{topic.introduction}
+                                .widget-topic-action
+                                    button.btn.btn-default.btn-xs.followTopic.mr-5(type='button', data-source_type='tag', data-source_id='2', data-show_num='false', data-toggle='tooltip', data-placement='right', title='', data-original-title='关注后将获得更新提醒') 关注
+                                    strong.follows #{topic.follows}
+                                    span.text-muted 关注
+                .text-center
+        footer#footer
+            .container
+                ul.list-unstyled.list-inline
+                    li &#x53CB;&#x60C5;&#x94FE;&#x63A5;
+                    li
+                        a(target='_blank', href='http://www.ibeifeng.com') &#x5317;&#x98CE;
+                    li
+                        a(target='_blank', href='http://www.baidu.com') &#x767E;&#x5EA6;
+                    li
+                        a(target='_blank', href='http://www.google.com') &#x8C37;&#x6B4C;
+                .text-center
+                    a(href='#') &#x5173;&#x4E8E;&#x6211;&#x4EEC;
+                    a(href='#') &#x8054;&#x7CFB;&#x6211;&#x4EEC;
+                    a(href='#') Powered by Leslie 1.0
+                .copyright.mt-10
+                    | Copyright &copy; 2017
+                    a(href='#') &#x7A0B;&#x5E8F;&#x733F;&#x95EE;&#x7B54;
+                    |  All Rights Reserved.
+                    a(href='#', target='_blank') Leslie
+                    |  &#x7248;&#x6743;&#x6240;&#x6709;
+                .copyright.mt-10
+                    a(href='http://www.miitbeian.gov.cn', target='_blank') &#x6CAA;ICP&#x5907;11111111&#x53F7;-1
+        #sendTo_message_model.modal.fade(tabindex='-1', role='dialog', aria-labelledby='exampleModalLabel')
+            .modal-dialog(role='document')
+                .modal-content
+                    .modal-header
+                        button.close(type='button', data-dismiss='modal', aria-label='Close')
+                            span(aria-hidden='true') &times;
+                        h4#exampleModalLabel.modal-title &#x53D1;&#x9001;&#x79C1;&#x4FE1;
+                    .modal-body
+                        form#sendTo_message_form(name='messageForm')
+                            input(type='hidden', name='_token', value='f5Zj2qrN8CA7OzwQTbq0ytgPvmU9GaA7z3cvT15w')
+                            input#to_user_id(type='hidden', name='to_user_id', value='0')
+                            .form-group
+                                label.control-label(for='to_user_name') &#x53D1;&#x7ED9;:
+                                span#to_user_name
+                            .form-group
+                                label.control-label(for='message-text') &#x5185;&#x5BB9;:
+                                textarea#message-text.form-control(name='content')
+                    .modal-footer
+                        button.btn.btn-default(type='button', data-dismiss='modal') &#x53D6;&#x6D88;
+                        button#sendTo_submit.btn.btn-primary(type='button') &#x53D1;&#x9001;
+        script(src='./static/components/jquery/dist/jquery.js')
+        script(src='./static/components/bootstrap/dist/js/bootstrap.js')

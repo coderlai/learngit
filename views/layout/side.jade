@@ -1,0 +1,44 @@
+.col-xs-12.col-md-3.side
+    .side-alert.alert.alert-link
+        a.btn.btn-warning.btn-block(href='/questioncreate') 我要提问
+        a.btn.btn-primary.btn-block(href='#') 分享经验
+    .widget-box
+        h4.widget-box-title 最新公告
+        ul.widget-links.list-unstyled
+            li.widget-links-item
+                a(title='1024程序员节，大神问答正式上线啦！', href='#') 1024&#x7A0B;&#x5E8F;&#x5458;&#x8282;&#xFF0C;&#x5927;&#x795E;&#x95EE;&#x7B54;&#x6B63;&#x5F0F;&#x4E0A;&#x7EBF;&#x5566;&#xFF01;
+    .widget-box
+        h2.h4.widget-box-title
+            | 热议话题
+            a(href='#/topics', title='更多') &raquo;
+        ul.taglist-inline.multi
+            li.tagPopup
+                a.tag(data-toggle='popover', href='#/topic/iOS', target='_blank') iOS
+            li.tagPopup
+                a.tag(data-toggle='popover', href='#/topic/Android', target='_blank') Android
+            li.tagPopup
+                a.tag(data-toggle='popover', href='#/topic/Java', target='_blank') Java
+            li.tagPopup
+                a.tag(data-toggle='popover', href='#/topic/Web%E5%89%8D%E7%AB%AF', target='_blank') Web&#x524D;&#x7AEF;
+            li.tagPopup
+                a.tag(data-toggle='popover', href='#/topic/Linux', target='_blank') Linux
+            li.tagPopup
+                a.tag(data-toggle='popover', href='#/topic/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F', target='_blank') &#x5FAE;&#x4FE1;&#x5C0F;&#x7A0B;&#x5E8F;
+            li.tagPopup
+                a.tag(data-toggle='popover', href='#/topic/%E8%BF%90%E7%BB%B4', target='_blank') &#x8FD0;&#x7EF4;
+            li.tagPopup
+                a.tag(data-toggle='popover', href='#/topic/Python', target='_blank') Python
+            li.tagPopup
+                a.tag(data-toggle='popover', href='#/topic/%E5%A4%A7%E6%95%B0%E6%8D%AE', target='_blank') &#x5927;&#x6570;&#x636E;
+            li.tagPopup
+                a.tag(data-toggle='popover', href='#/topic/MYSQL', target='_blank') MYSQL
+    .widget-box.mt30
+        h2.widget-box-title
+            | &#x8D22;&#x5BCC;&#x699C;
+            a(href='#/top/coins', title='更多') &raquo;
+        ol.widget-top10
+            each user in userList
+                li.text-muted
+                    img.avatar-32(src='/img/header.png')
+                    a.ellipsis(href='#/people/12', target='_blank') #{user.username}
+                    span.text-muted.pull-right #{user.coins} 金币

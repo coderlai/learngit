@@ -1,0 +1,345 @@
+doctype html
+html(lang='en')
+    head
+        meta(charset='UTF-8')
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+        title 程序员问答网站
+        meta(name='keywords', content='问答网站')
+        meta(name='description', content='程序员，为代码而生！大神问答，为程序员而生！')
+        link(rel='stylesheet', href='./static/components/bootstrap/dist/css/bootstrap.css')
+        link(rel='stylesheet', href='./static/components/font-awesome/css/font-awesome.css')
+        link(rel='stylesheet', href='./css/global.css')
+    body
+        include layout/header
+        .wrap
+            .container
+                .row
+                    .col-xs-12.col-md-9.main
+                        section.tag-header.mt-20
+                            div
+                                span.h4.tag-header-title Android
+                                .tag-header-follow
+                                    button#follow-button.btn.btn-default.btn-xs(type='button', data-source_type='tag', data-source_id='1', data-show_num='false', data-toggle='tooltip', data-placement='right', title='', data-original-title='关注后将获得更新提醒') &#x5173;&#x6CE8;
+                            p.tag-header-summary &#x6682;&#x65E0;&#x4ECB;&#x7ECD;
+                        ul.nav.nav-tabs.nav-tabs-zen
+                            li.active
+                                a(href='#/topic/Android') &#x95EE;&#x7B54;
+                        .tab-content
+                            .stream-list
+                                section.stream-list-item
+                                    .qa-rank
+                                        .answers
+                                            | 1
+                                            small &#x56DE;&#x7B54;
+                                        .views.hidden-xs
+                                            | 93
+                                            small &#x6D4F;&#x89C8;
+                                    .summary
+                                        ul.author.list-inline
+                                            li
+                                                a(href='#/people/13') &#x5C0F;&#x5A49;&#x513F;
+                                                span.split
+                                                span.askDate 2016-10-19 16:35:54
+                                        h2.title
+                                            a(href='#/question/60') android-RadioButton-&#x5982;&#x4F55;&#x81EA;&#x5B9A;&#x4E49;RadioButton&#x5DE6;&#x8FB9;&#x7684;&#x5706;&#x5708;
+                                        ul.taglist-inline.ib
+                                            li.tagPopup
+                                                a.tag(href='#/topic/Android') Android
+                                section.stream-list-item
+                                    .qa-rank
+                                        .answers
+                                            | 1
+                                            small &#x56DE;&#x7B54;
+                                        .views.hidden-xs
+                                            | 76
+                                            small &#x6D4F;&#x89C8;
+                                    .summary
+                                        ul.author.list-inline
+                                            li
+                                                a(href='#/people/13') &#x5C0F;&#x5A49;&#x513F;
+                                                span.split
+                                                span.askDate 2016-10-19 16:38:23
+                                        h2.title
+                                            a(href='#/question/61') android-RadioButton-&#x5982;&#x4F55;&#x8BBE;&#x7F6E;&#x9009;&#x62E9;&#x6846;&#x548C;&#x6587;&#x5B57;&#x7684;&#x95F4;&#x8DDD;
+                                        ul.taglist-inline.ib
+                                            li.tagPopup
+                                                a.tag(href='#/topic/Android') Android
+                                section.stream-list-item
+                                    .qa-rank
+                                        .answers
+                                            | 1
+                                            small &#x56DE;&#x7B54;
+                                        .views.hidden-xs
+                                            | 78
+                                            small &#x6D4F;&#x89C8;
+                                    .summary
+                                        ul.author.list-inline
+                                            li
+                                                a(href='#/people/13') &#x5C0F;&#x5A49;&#x513F;
+                                                span.split
+                                                span.askDate 2016-10-19 16:41:20
+                                        h2.title
+                                            a(href='#/question/62') android-RadioButton-&#x5982;&#x4F55;&#x9ED8;&#x8BA4;&#x9009;&#x4E2D;RadioGroup&#x4E2D;&#x67D0;&#x4E00;&#x4E2A;RadioButton
+                                        ul.taglist-inline.ib
+                                            li.tagPopup
+                                                a.tag(href='#/topic/Android') Android
+                                section.stream-list-item
+                                    .qa-rank
+                                        .answers
+                                            | 1
+                                            small &#x56DE;&#x7B54;
+                                        .views.hidden-xs
+                                            | 63
+                                            small &#x6D4F;&#x89C8;
+                                    .summary
+                                        ul.author.list-inline
+                                            li
+                                                a(href='#/people/13') &#x5C0F;&#x5A49;&#x513F;
+                                                span.split
+                                                span.askDate 2016-10-19 16:49:15
+                                        h2.title
+                                            a(href='#/question/65') android-CheckBox-&#x5982;&#x4F55;&#x5BF9;checkbox&#x7684;&#x9009;&#x4E2D;&#x72B6;&#x6001;&#x8FDB;&#x884C;&#x76D1;&#x542C;
+                                        ul.taglist-inline.ib
+                                            li.tagPopup
+                                                a.tag(href='#/topic/Android') Android
+                                section.stream-list-item
+                                    .qa-rank
+                                        .answers
+                                            | 1
+                                            small &#x56DE;&#x7B54;
+                                        .views.hidden-xs
+                                            | 63
+                                            small &#x6D4F;&#x89C8;
+                                    .summary
+                                        ul.author.list-inline
+                                            li
+                                                a(href='#/people/13') &#x5C0F;&#x5A49;&#x513F;
+                                                span.split
+                                                span.askDate 2016-10-19 16:59:06
+                                        h2.title
+                                            a(href='#/question/74') android-ImageView-&#x5982;&#x4F55;&#x5BF9;ImageView&#x7684;&#x56FE;&#x7247;&#x8FDB;&#x884C;&#x7F29;&#x653E;&#xFF08;scaleType&#xFF09;
+                                        ul.taglist-inline.ib
+                                            li.tagPopup
+                                                a.tag(href='#/topic/Android') Android
+                                section.stream-list-item
+                                    .qa-rank
+                                        .answers
+                                            | 1
+                                            small &#x56DE;&#x7B54;
+                                        .views.hidden-xs
+                                            | 68
+                                            small &#x6D4F;&#x89C8;
+                                    .summary
+                                        ul.author.list-inline
+                                            li
+                                                a(href='#/people/13') &#x5C0F;&#x5A49;&#x513F;
+                                                span.split
+                                                span.askDate 2016-10-19 16:57:07
+                                        h2.title
+                                            a(href='#/question/73') android-Button-&#x5982;&#x4F55;&#x8BBE;&#x7F6E;Button&#x6216;&#x8005;ImageButton&#x7684;&#x80CC;&#x666F;&#x900F;&#x660E;
+                                        ul.taglist-inline.ib
+                                            li.tagPopup
+                                                a.tag(href='#/topic/Android') Android
+                                section.stream-list-item
+                                    .qa-rank
+                                        .answers
+                                            | 1
+                                            small &#x56DE;&#x7B54;
+                                        .views.hidden-xs
+                                            | 64
+                                            small &#x6D4F;&#x89C8;
+                                    .summary
+                                        ul.author.list-inline
+                                            li
+                                                a(href='#/people/13') &#x5C0F;&#x5A49;&#x513F;
+                                                span.split
+                                                span.askDate 2016-10-19 16:56:21
+                                        h2.title
+                                            a(href='#/question/71') android-Button-&#x5982;&#x4F55;&#x8BA9;Button&#x65E2;&#x663E;&#x793A;&#x56FE;&#x7247;&#x53C8;&#x663E;&#x793A;&#x6587;&#x5B57;
+                                        ul.taglist-inline.ib
+                                            li.tagPopup
+                                                a.tag(href='#/topic/Android') Android
+                                section.stream-list-item
+                                    .qa-rank
+                                        .answers
+                                            | 1
+                                            small &#x56DE;&#x7B54;
+                                        .views.hidden-xs
+                                            | 83
+                                            small &#x6D4F;&#x89C8;
+                                    .summary
+                                        ul.author.list-inline
+                                            li
+                                                a(href='#/people/13') &#x5C0F;&#x5A49;&#x513F;
+                                                span.split
+                                                span.askDate 2016-10-19 16:54:41
+                                        h2.title
+                                            a(href='#/question/69') android-checkbox-&#x5982;&#x4F55;&#x81EA;&#x5B9A;&#x4E49;checkbox&#x7684;&#x6837;&#x5F0F;
+                                        ul.taglist-inline.ib
+                                            li.tagPopup
+                                                a.tag(href='#/topic/Android') Android
+                                section.stream-list-item
+                                    .qa-rank
+                                        .answers
+                                            | 1
+                                            small &#x56DE;&#x7B54;
+                                        .views.hidden-xs
+                                            | 71
+                                            small &#x6D4F;&#x89C8;
+                                    .summary
+                                        ul.author.list-inline
+                                            li
+                                                a(href='#/people/13') &#x5C0F;&#x5A49;&#x513F;
+                                                span.split
+                                                span.askDate 2016-10-19 16:46:33
+                                        h2.title
+                                            a(href='#/question/64') android-CheckBox-&#x5982;&#x4F55;&#x89E3;&#x51B3;CheckBox&#x7684;button&#x548C;&#x6587;&#x5B57;&#x7248;&#x672C;&#x95F4;&#x8DDD;&#x4E0D;&#x4E00;&#x81F4;&#x7684;&#x95EE;&#x9898;
+                                        ul.taglist-inline.ib
+                                            li.tagPopup
+                                                a.tag(href='#/topic/Android') Android
+                                section.stream-list-item
+                                    .qa-rank
+                                        .answers
+                                            | 1
+                                            small &#x56DE;&#x7B54;
+                                        .views.hidden-xs
+                                            | 62
+                                            small &#x6D4F;&#x89C8;
+                                    .summary
+                                        ul.author.list-inline
+                                            li
+                                                a(href='#/people/13') &#x5C0F;&#x5A49;&#x513F;
+                                                span.split
+                                                span.askDate 2016-10-19 16:52:00
+                                        h2.title
+                                            a(href='#/question/66') android-CheckBox-ListView&#x4E2D;&#x5BF9;checkbox&#x8FDB;&#x884C;&#x5168;&#x90E8;&#x9009;&#x62E9;&#x7684;&#x89E3;&#x51B3;&#x65B9;&#x6848;
+                                        ul.taglist-inline.ib
+                                            li.tagPopup
+                                                a.tag(href='#/topic/Android') Android
+                                section.stream-list-item
+                                    .qa-rank
+                                        .answers
+                                            | 1
+                                            small &#x56DE;&#x7B54;
+                                        .views.hidden-xs
+                                            | 68
+                                            small &#x6D4F;&#x89C8;
+                                    .summary
+                                        ul.author.list-inline
+                                            li
+                                                a(href='#/people/6') symlich
+                                                span.split
+                                                span.askDate 2016-10-20 10:58:48
+                                        h2.title
+                                            a(href='#/question/108') Android Studio &#x4E2D;&#x7684;Gradle&#x7684;&#x8BF4;&#x660E;
+                                        ul.taglist-inline.ib
+                                            li.tagPopup
+                                                a.tag(href='#/topic/Android') Android
+                                section.stream-list-item
+                                    .qa-rank
+                                        .answers
+                                            | 1
+                                            small &#x56DE;&#x7B54;
+                                        .views.hidden-xs
+                                            | 67
+                                            small &#x6D4F;&#x89C8;
+                                    .summary
+                                        ul.author.list-inline
+                                            li
+                                                a(href='#/people/6') symlich
+                                                span.split
+                                                span.askDate 2016-10-20 11:03:39
+                                        h2.title
+                                            a(href='#/question/110') eclipse&#x4E2D;&#x7684;.9&#x56FE;&#x7247;&#x5728;as&#x4E2D;&#x90FD;&#x7F16;&#x8BD1;&#x4E0D;&#x4E86;&#xFF0C;&#x600E;&#x4E48;&#x529E;&#xFF1F;
+                                        ul.taglist-inline.ib
+                                            li.tagPopup
+                                                a.tag(href='#/topic/Android') Android
+                                section.stream-list-item
+                                    .qa-rank
+                                        .answers
+                                            | 1
+                                            small &#x56DE;&#x7B54;
+                                        .views.hidden-xs
+                                            | 75
+                                            small &#x6D4F;&#x89C8;
+                                    .summary
+                                        ul.author.list-inline
+                                            li
+                                                a(href='#/people/5') &#x5C0F;&#x706B;&#x5F71;
+                                                span.split
+                                                span.askDate 2016-10-20 14:27:33
+                                        h2.title
+                                            a(href='#/question/131') android-ImageView&#x7684;&#x56FE;&#x7247;&#x7F29;&#x653E;&#xFF08;scaleType&#xFF09;
+                                        ul.taglist-inline.ib
+                                            li.tagPopup
+                                                a.tag(href='#/topic/Android') Android
+                                section.stream-list-item
+                                    .qa-rank
+                                        .answers
+                                            | 1
+                                            small &#x56DE;&#x7B54;
+                                        .views.hidden-xs
+                                            | 82
+                                            small &#x6D4F;&#x89C8;
+                                    .summary
+                                        ul.author.list-inline
+                                            li
+                                                a(href='#/people/5') &#x5C0F;&#x706B;&#x5F71;
+                                                span.split
+                                                span.askDate 2016-10-20 14:29:37
+                                        h2.title
+                                            a(href='#/question/132') android-TextView&#x6587;&#x5B57;&#x9634;&#x5F71;
+                                        ul.taglist-inline.ib
+                                            li.tagPopup
+                                                a.tag(href='#/topic/Android') Android
+                                section.stream-list-item
+                                    .qa-rank
+                                        .answers
+                                            | 1
+                                            small &#x56DE;&#x7B54;
+                                        .views.hidden-xs
+                                            | 88
+                                            small &#x6D4F;&#x89C8;
+                                    .summary
+                                        ul.author.list-inline
+                                            li
+                                                a(href='#/people/5') &#x5C0F;&#x706B;&#x5F71;
+                                                span.split
+                                                span.askDate 2016-10-20 14:30:50
+                                        h2.title
+                                            a(href='#/question/133') android-TextView&#x663E;&#x793A;HTML&#x6587;&#x672C;
+                                        ul.taglist-inline.ib
+                                            li.tagPopup
+                                                a.tag(href='#/topic/Android') Android
+                            .text-center
+                                ul.pagination
+                                    li.disabled
+                                        span &laquo;
+                                    li.active
+                                        span 1
+                                    li
+                                        a(href='#/topic/Android?page=2') 2
+                                    li
+                                        a(href='#/topic/Android?page=3') 3
+                                    li
+                                        a(href='#/topic/Android?page=4') 4
+                                    li
+                                        a(href='#/topic/Android?page=5') 5
+                                    li
+                                        a(href='#/topic/Android?page=6') 6
+                                    li
+                                        a(href='#/topic/Android?page=7') 7
+                                    li
+                                        a(href='#/topic/Android?page=8') 8
+                                    li.disabled
+                                        span ...
+                                    li
+                                        a(href='#/topic/Android?page=13') 13
+                                    li
+                                        a(href='#/topic/Android?page=14') 14
+                                    li
+                                        a(href='#/topic/Android?page=2', rel='next') &raquo;
+                    include layout/side
+        include layout/footer
+        script(src='./static/components/jquery/dist/jquery.js')
+        script(src='./static/components/bootstrap/dist/js/bootstrap.js')

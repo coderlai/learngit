@@ -1,0 +1,61 @@
+.top-common-nav.mb-50
+    .navbar-default.navbar-fixed-top
+        nav.navbar(role='navigation')
+            .container
+                .navbar-header
+                    button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#bs-example-navbar-collapse-1')
+                        span.sr-only Toggle navigation
+                        span.icon-bar
+                        span.icon-bar
+                        span.icon-bar
+                    a.navbar-brand(href='/') 程序员问答
+                #bs-example-navbar-collapse-1.collapse.navbar-collapse
+                    ul.nav.navbar-nav
+                        li
+                            a(href='/') 首页
+                        li
+                            a(href='/question') 问答
+                        li
+                            a(href='/topics') 话题
+                    ul.nav.navbar-nav.navbar-right
+                        if user
+                            li
+                                a(href='/') #{user.userName}
+                            li
+                                a(href='/users/logout') 退出
+                        else
+                            li
+                                a(href='/login') 登录
+                            li
+                                a(href='/register') 注册
+                    form.navbar-form.navbar-right(role='search')
+                        .input-group
+                            input.form-control(type='text', placeholder='Search')
+                            span.input-group-addon.btn
+                                span#search-button.glyphicon.glyphicon-search(aria-hidden='true')
+        .navbar-inverse
+            .container
+                ul.nav.navbar-nav.navtags.taglist-inline
+                    li
+                        a(href='/') javscript
+                    li
+                        a(href='/') php
+                    li
+                        a(href='/') python
+                    li
+                        a(href='/') java
+                    li
+                        a(href='/') mysql
+                    li
+                        a(href='/') html5
+                    li
+                        a(href='/') node.js
+                    li
+                        a(href='/') css3
+.top-alert.mt-90.clearfix.text-center
+    //if lt IE 9
+      .alert.alert-danger.topframe(role='alert')
+        | &#x4F60;&#x7684;&#x6D4F;&#x89C8;&#x5668;&#x5B9E;&#x5728;
+        strong &#x592A;&#x592A;&#x592A;&#x592A;&#x592A;&#x592A;&#x65E7;&#x4E86;
+        | &#xFF0C;&#x653E;&#x5B66;&#x522B;&#x8D70;&#xFF0C;&#x5347;&#x7EA7;&#x5B8C;&#x6D4F;&#x89C8;&#x5668;&#x518D;&#x8BF4;
+        a.alert-link(target='_blank', href='http://browsehappy.com') &#x7ACB;&#x5373;&#x5347;&#x7EA7;
