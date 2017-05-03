@@ -1,4 +1,0 @@
-this is a license file
-second license file
-third license file
-forth license file
